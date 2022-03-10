@@ -1,9 +1,5 @@
-variable "my_rg"{
-    description ="rg name"
-    default ="my_dev_rg"
+variable "dev_var"{
+    description ="simpe dev variable"
+    default ="rg_gurpreet_dev"
 
 }
-
-#app sevice
-#dev prod test variables
-#

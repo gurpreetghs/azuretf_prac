@@ -60,3 +60,4 @@ resource "azurerm_storage_account" "thepreetrs" {
     environment = "staging"
   }
 }
+
