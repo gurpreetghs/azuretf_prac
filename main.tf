@@ -50,14 +50,22 @@ resource "azurerm_app_service" "thepreetrs" {
 }
 
 resource "azurerm_storage_account" "thepreetrs" {
-  name                     = "storageaccountname"
+  name                     = "ipreetstaragwe"
   resource_group_name      = azurerm_resource_group.thepreetrs.name
   location                 = azurerm_resource_group.thepreetrs.location
   account_tier             = "Standard"
   account_replication_type = "GRS"
 
   tags = {
-    environment = "staging"
+    environment = "preet"
   }
 }
 
+resource "azurerm_resource_group" "rg" {
+  name     = var.dev_var
+  location = "West Europe"
+}
+resource "azurerm_resource_group" "rg2" {
+  name     = var.qa_var
+  location = "West Europe"
+}
