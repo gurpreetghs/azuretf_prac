@@ -12,7 +12,18 @@ provider "azurerm" {
 
 
 }
-resource "azurerm_resource_group" "preetrg" {
-  name     = "mypreetrg"
-  location = "central india"
+resource "azurerm_resource_group" "thepreetrs" {
+  name     = "api-rg-pro"
+  location = "West Europe"
+}
+
+resource "azurerm_app_service_plan" "thepreetrs" {
+  name                = "api-appserviceplan-pro"
+  location            = azurerm_resource_group.thepreetrs.location
+  resource_group_name = azurerm_resource_group.thepreetrs.name
+
+  sku {
+    tier = "Standard"
+    size = "S1"
+  }
 }
